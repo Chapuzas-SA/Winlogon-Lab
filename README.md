@@ -4,7 +4,7 @@
 
 **Three entry points. One file dialog. Questionable curiosity, documented properly.**
 
-`Windows x64` · `C++11 / C++17` · `Win32` · `COM` · `MinGW-w64` · `PowerShell`
+`Windows x64` · `Win32` · `COM` · `MinGW-w64` · `PowerShell`
 
 *An experimental comparison of Windows sign-in integration surfaces.*
 
@@ -47,7 +47,6 @@ The file dialog is the common demonstration, making it easier to compare registr
 |---|---|---|---|
 | Integration surface | Credential Provider | Pre-Logon Access Provider | Ease of Access |
 | Binary | `Provider.dll` | `PreAuthPLAP.dll` | `EoASysRec.exe` |
-| Language | C++11 | C++17 | C++17 |
 | Core APIs | COM, Credential Provider, `IFileOpenDialog` | COM, PLAP, Win32 | Win32 |
 | Entry point | Sign-in options → **Pre-Auth** | Network sign-in → **PreAuth PLAP** | **Ctrl+Alt+F9** at sign-in |
 | Trigger | **Command link** | **Connect** | Keyboard shortcut |
@@ -92,18 +91,24 @@ The implementation may look simpler, but its execution context deserves particul
 
 The pixel-art banner is a playful map, not a technical diagram. Here is the actual integration map: the three paths have different hosting models, activation paths and security contexts; **they are not interchangeable**.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/architecture-terminal-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/architecture-terminal-light.svg">
-  <img src="./assets/architecture-terminal-light.svg" alt="Terminal diagram: CPs via command link, PLAP via Connect, and EoA via Ctrl+Alt+F9 all open the native Windows file dialog" width="960">
-</picture>
+<p align="center">
+  <img
+    src="./assets/architecture-terminal-light.svg#gh-light-mode-only"
+    alt="Architecture — light theme"
+    width="100%"
+  />
+  <img
+    src="./assets/architecture-terminal-dark.svg#gh-dark-mode-only"
+    alt="Architecture — dark theme"
+    width="100%"
+  />
+</p>
 
 ## `> build environment`
 
 | Component | Specification |
 |---|---|
 | Target | Windows x64 |
-| Language | C++11 (CPs); C++17 (PLAP and EoA) |
 | APIs | Win32 and COM, as applicable |
 | Build host | Linux, GNU Make, MinGW-w64 |
 | Cross-compiler | `x86_64-w64-mingw32-g++` |
@@ -121,11 +126,18 @@ The root directory does not provide a shared build target. See each project's RE
 
 ## `> inventory` — repository layout
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/inventory-terminal-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/inventory-terminal-light.svg">
-  <img src="./assets/inventory-terminal-light.svg" alt="Terminal-style repository overview: CPs, PLAP, EoA, assets and README.md" width="960">
-</picture>
+<p align="center">
+  <img
+    src="./assets/inventory-terminal-light.svg#gh-light-mode-only"
+    alt="Repository inventory — light theme"
+    width="100%"
+  />
+  <img
+    src="./assets/inventory-terminal-dark.svg#gh-dark-mode-only"
+    alt="Repository inventory — dark theme"
+    width="100%"
+  />
+</p>
 
 <details>
 <summary><strong>Show full repository tree</strong> — copyable text, because screenshots are terrible build tools</summary>
