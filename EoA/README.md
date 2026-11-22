@@ -1,3 +1,12 @@
+
+<p align="center">
+  <img
+    src="../assets/eoa-signin.png"
+    alt="EoA — Ease of Access: concept art of the Windows pre-authentication screen with the native Open File dialog"
+    width="100%"
+  />
+</p>
+
 <pre>
 Recovery System                                        November 22, 2026
 Category: Informational
