@@ -8,11 +8,7 @@
 
 *An experimental comparison of Windows sign-in integration surfaces.*
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/logon-paths-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/logon-paths-light.svg">
-  <img src="./assets/logon-paths-light.svg" alt="CPs, PLAP and EoA converge on the native Windows Open File dialog" width="900">
-</picture>
+<img src="./assets/winlogon-lab-banner.png" alt="Winlogon-Lab pixel-art isometric banner: CPs, PLAP and EoA converge on a native Open File dialog" width="100%">
 
 </div>
 
@@ -81,7 +77,7 @@ The implementation may look simpler, but its execution context deserves particul
 
 ## `> architecture.log`
 
-The diagram above summarizes the shared outcome. The three paths have different hosting models, activation paths and security contexts; **they are not interchangeable**.
+The pixel-art banner is a playful map, not a technical diagram. Here is the actual integration map: the three paths have different hosting models, activation paths and security contexts; **they are not interchangeable**.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/architecture-terminal-dark.svg">
@@ -143,8 +139,7 @@ Winlogon-Lab/
 │   ├── Uninstall.ps1
 │   └── README.md
 ├── assets/
-│   ├── logon-paths-light.svg
-│   ├── logon-paths-dark.svg
+│   ├── winlogon-lab-banner.png
 │   ├── architecture-terminal-light.svg
 │   ├── architecture-terminal-dark.svg
 │   ├── inventory-terminal-light.svg
