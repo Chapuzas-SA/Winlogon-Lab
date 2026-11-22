@@ -83,11 +83,11 @@ The implementation may look simpler, but its execution context deserves particul
 
 The diagram above summarizes the shared outcome. The three paths have different hosting models, activation paths and security contexts; **they are not interchangeable**.
 
-```text
-[Sign-in options] ── CPs  ── Command link ─┐
-[Network sign-in] ── PLAP ── Connect ───────┼──> Native Open File dialog
-[Accessibility] ──── EoA  ── Ctrl+Alt+F9 ──┘
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/architecture-terminal-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/architecture-terminal-light.svg">
+  <img src="./assets/architecture-terminal-light.svg" alt="Terminal diagram: CPs via command link, PLAP via Connect, and EoA via Ctrl+Alt+F9 all open the native Windows file dialog" width="960">
+</picture>
 
 ## `> build environment`
 
@@ -112,6 +112,15 @@ The root directory does not provide a shared build target. See each project's RE
 
 ## `> inventory` — repository layout
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/inventory-terminal-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/inventory-terminal-light.svg">
+  <img src="./assets/inventory-terminal-light.svg" alt="Terminal-style repository overview: CPs, PLAP, EoA, assets and README.md" width="960">
+</picture>
+
+<details>
+<summary><strong>Show full repository tree</strong> — copyable text, because screenshots are terrible build tools</summary>
+
 ```text
 Winlogon-Lab/
 ├── CPs/
@@ -135,9 +144,15 @@ Winlogon-Lab/
 │   └── README.md
 ├── assets/
 │   ├── logon-paths-light.svg
-│   └── logon-paths-dark.svg
+│   ├── logon-paths-dark.svg
+│   ├── architecture-terminal-light.svg
+│   ├── architecture-terminal-dark.svg
+│   ├── inventory-terminal-light.svg
+│   └── inventory-terminal-dark.svg
 └── README.md
 ```
+
+</details>
 
 ## `> danger zone` — security and limitations
 

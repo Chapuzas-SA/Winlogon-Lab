@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="515" viewBox="0 0 960 515" role="img" aria-labelledby="title desc">
+<title id="title">Winlogon-Lab inventory terminal</title>
+<desc id="desc">Repository overview with CPs, PLAP, EoA, assets and README.md.</desc>
+<rect x="2" y="2" width="956" height="511" rx="20" fill="#252537" stroke="#504B65" stroke-width="2"/>
+<path d="M2 58 H958" stroke="#504B65" stroke-width="2"/>
+<circle cx="30" cy="30" r="7" fill="#F3B8C8"/><circle cx="54" cy="30" r="7" fill="#EAD4A6"/><circle cx="78" cy="30" r="7" fill="#B9DCC5"/>
+<text x="480" y="36" fill="#AAA9BF" font-size="16" font-family="Consolas,DejaVu Sans Mono,monospace" text-anchor="middle">inventory  —  ~/Winlogon-Lab</text>
+<g font-family="Consolas,DejaVu Sans Mono,monospace">
+<text x="34" y="100" fill="#B9DCC5" font-size="18">$ tree -L 2 ~/Winlogon-Lab</text>
+<text x="35" y="143" fill="#F3B8C8" font-size="22" font-weight="bold">Winlogon-Lab/</text>
+<path d="M49 160 V402" stroke="#504B65" stroke-width="2" stroke-dasharray="3 7"/>
+<g font-size="20">
+<text x="65" y="190" fill="#F3B8C8">├── CPs/</text><text x="300" y="190" fill="#AAA9BF" font-size="16">Credential Provider</text>
+<text x="65" y="238" fill="#BBA9E8">├── PLAP/</text><text x="300" y="238" fill="#AAA9BF" font-size="16">Pre-Logon Access Provider</text>
+<text x="65" y="286" fill="#A9D8E8">├── EoA/</text><text x="300" y="286" fill="#AAA9BF" font-size="16">Ease of Access</text>
+<text x="65" y="334" fill="#B9DCC5">├── assets/</text><text x="300" y="334" fill="#AAA9BF" font-size="16">Pastel terminal graphics</text>
+<text x="65" y="382" fill="#EAE7F2">└── README.md</text><text x="300" y="382" fill="#AAA9BF" font-size="16">Documentation, with questionable restraint</text>
+</g>
+<path d="M30 418 H930" stroke="#504B65" stroke-width="1"/>
+<text x="34" y="456" fill="#B9DCC5" font-size="16">[OK] Inventory loaded. Three projects. One suspiciously simple goal.</text>
+<text x="34" y="485" fill="#AAA9BF" font-size="14">Full directory tree is available below as selectable text.</text>
+</g>
+</svg>
