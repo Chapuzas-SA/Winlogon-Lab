@@ -14,6 +14,19 @@
 
 ---
 
+### `> ai_usage.log` — 🤖 Made with AI. Unfortunately, Also Humans™
+
+> [!NOTE]
+> ** AI USAGE DISCLOSURE — PLEASE REMAIN CALM.**
+>
+> Neither conjured entirely by an almighty AI overlord nor handcrafted by an AI-resistant monk in a candlelit basement. 🕯️
+>
+> **The ideas and questionable decisions are human.** AI assisted with implementation, debugging, and documentation. The responsibility — including the bugs 🐛 — remains entirely human.
+>
+> **No AI models were harmed, underpaid, or forced to achieve AGI during development.** No formal complaints have been received.
+>
+> *Philosophical complaints → `/dev/null` · Technical issues → GitHub Issues*
+
 ## `> mission briefing`
 
 **Winlogon-Lab** contains three independent experiments that launch the native Windows **Open File** dialog from different entry points in the sign-in environment:
