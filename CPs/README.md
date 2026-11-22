@@ -1,3 +1,10 @@
+<p align="center">
+  <img
+    src="../assets/cp-signin.png"
+    alt="CP — Credential Provider: concept art of the Windows pre-authentication screen with the native Open File dialog"
+    width="100%"
+  />
+</p>
 <pre>
 Pre-Auth Project                                           November 2026
 Category: Informational
