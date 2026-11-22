@@ -1,3 +1,12 @@
+
+<p align="center">
+  <img
+    src="../assets/plap-signin.png"
+    alt="PLAP — Pre-Logon Access Provider: concept art of the Windows pre-authentication screen with the native Open File dialog"
+    width="100%"
+  />
+</p>
+
 <pre>
 PreAuth PLAP                                           November 22, 2026
 Category: Informational
