@@ -1,0 +1,4 @@
+#include "Resource.h"
+
+IDB_PROVIDER_LOGO BITMAP "resources/provider.bmp"
+IDR_PROVIDER_LOGO_PNG RCDATA "resources/provider.png"

@@ -1,0 +1,7 @@
+#include <windows.h>
+1 RT_MANIFEST "EoASysRec.manifest"
+STRINGTABLE
+BEGIN
+    101 "Recovery System"
+    102 "Ctrl+Alt+F9 en inicio de sesion."
+END

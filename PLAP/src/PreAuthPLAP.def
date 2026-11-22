@@ -1,0 +1,4 @@
+LIBRARY PreAuthPLAP
+EXPORTS
+    DllGetClassObject PRIVATE
+    DllCanUnloadNow PRIVATE
