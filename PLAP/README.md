@@ -2,144 +2,150 @@
 <p align="center">
   <img
     src="../assets/plap-signin.png"
-    alt="PLAP — Pre-Logon Access Provider: concept art of the Windows pre-authentication screen with the native Open File dialog"
+    alt="PLAP — Pre-Logon Access Provider: ilustración conceptual de la pantalla de Windows previa a la autenticación con el cuadro de diálogo nativo Abrir"
     width="100%"
   />
 </p>
 
 <pre>
-PreAuth PLAP                                           November 22, 2026
-Category: Informational
+PreAuth PLAP                                22 de noviembre de 2026
+Categoría: Informativo
 
 
-                            PREAUTH PLAP   
+                            PREAUTH PLAP
 
-ABSTRACT
+RESUMEN
 
-   A PLAP provider for Windows x64 that displays the Open dialog when
-   you select PreAuth PLAP and press Connect on the sign-in screen.
-   Windows hosts the provider and manages its execution.
+   Un proveedor PLAP para Windows x64 que muestra el cuadro de diálogo
+   Abrir al seleccionar PreAuth PLAP y pulsar Connect en la pantalla de
+   inicio de sesión. Windows aloja el proveedor y gestiona su ejecución.
 
-                           TABLE OF CONTENTS
+                                 ÍNDICE
 
-   <a href="#overview">1.  OVERVIEW</a> ...................................................... <a href="#overview">1</a>
-   <a href="#requirements-and-build">2.  REQUIREMENTS AND BUILD</a> ........................................ <a href="#requirements-and-build">1</a>
-   <a href="#installation">3.  INSTALLATION</a> .................................................. <a href="#installation">1</a>
-   <a href="#startup-settings">4.  STARTUP SETTINGS</a> .............................................. <a href="#startup-settings">2</a>
-   <a href="#usage">5.  USAGE</a> ......................................................... <a href="#usage">2</a>
-   <a href="#uninstallation">6.  UNINSTALLATION</a> ................................................ <a href="#uninstallation">2</a>
+   <a href="#overview">1.  DESCRIPCIÓN GENERAL</a> ............................................ <a href="#overview">1</a>
+   <a href="#requirements-and-build">2.  REQUISITOS Y COMPILACIÓN</a> ....................................... <a href="#requirements-and-build">1</a>
+   <a href="#installation">3.  INSTALACIÓN</a> ................................................... <a href="#installation">1</a>
+   <a href="#startup-settings">4.  CONFIGURACIÓN DE ACTIVACIÓN</a> .................................... <a href="#startup-settings">2</a>
+   <a href="#usage">5.  USO</a> ........................................................... <a href="#usage">2</a>
+   <a href="#uninstallation">6.  DESINSTALACIÓN</a> ................................................ <a href="#uninstallation">2</a>
 
 
-PreAuth PLAP                 Informational                      [Page i]
+PreAuth PLAP                Informativo                     [Página i]
 </pre>
 
 <pre>
-PreAuth PLAP                   User Guide              November 22, 2026
+PreAuth PLAP                Guía de uso      22 de noviembre de 2026
 
 
-<a name="overview"></a>1.  OVERVIEW
+<a name="overview"></a>1.  DESCRIPCIÓN GENERAL
 
-   A PLAP provider for Windows x64 that displays the Open dialog when
-   you select PreAuth PLAP and press Connect on the sign-in screen.
-   Windows hosts the provider and manages its execution.
+   Un proveedor PLAP para Windows x64 que muestra el cuadro de diálogo
+   Abrir al seleccionar PreAuth PLAP y pulsar Connect en la pantalla de
+   inicio de sesión. Windows aloja el proveedor y gestiona su ejecución.
 
 
-<a name="requirements-and-build"></a>2.  REQUIREMENTS AND BUILD
+<a name="requirements-and-build"></a>2.  REQUISITOS Y COMPILACIÓN
 
-   Building requires Make and MinGW-w64 on Linux, including the Windows
-   x64 C++ compiler and binutils.
+   Para compilar se necesitan Make y MinGW-w64 en Linux, incluidos el
+   compilador de C++ para Windows x64 y binutils.
 
-   From the project root:
+   Desde la raíz del proyecto PLAP:
 
       make
 
-   The output is build/PreAuthPLAP.dll, with statically linked MinGW
-   runtimes. Copy Install.ps1, Uninstall.ps1, and the build folder to
-   Windows, keeping the scripts alongside that folder.
+   Se genera build/PreAuthPLAP.dll, con las bibliotecas de ejecución de
+   MinGW enlazadas estáticamente. Copia Install.ps1, Uninstall.ps1 y la
+   carpeta build a Windows, dejando los scripts junto a esa carpeta.
 
-   The installation and uninstallation scripts require 64-bit PowerShell
-   and administrator privileges. Execution must be allowed by the
-   computer&#x27;s policies.
+   Los scripts de instalación y desinstalación requieren PowerShell de
+   64 bits y privilegios de administrador. Las directivas del equipo
+   deben permitir su ejecución.
 
 
-<a name="installation"></a>3.  INSTALLATION
+<a name="installation"></a>3.  INSTALACIÓN
 
-   Open 64-bit PowerShell as administrator and run from the project
-   root:
+   Abre PowerShell de 64 bits con privilegios de administrador y
+   ejecuta lo siguiente desde la raíz del proyecto PLAP:
 
       .\Install.ps1
 
-   The installer:
+   El instalador:
 
-   o  Copies the DLL to %SystemRoot%\System32\PreAuthPLAP.dll.
+   o  Copia la DLL a %SystemRoot%\System32\PreAuthPLAP.dll.
 
-   o  Registers the COM class as PreAuth PLAP under the registry
-      location listed below.
+   o  Registra la clase COM como PreAuth PLAP en la ubicación del
+      Registro que se indica más abajo.
 
-   o  Sets InprocServer32 to the installed DLL path and ThreadingModel
-      to Apartment.
+   o  Establece InprocServer32 con la ruta de la DLL instalada y
+      ThreadingModel con el valor Apartment.
 
-   o  Registers PreAuth PLAP as a pre-logon access provider in the
-      64-bit registry view.
+   o  Registra PreAuth PLAP como proveedor de acceso previo al inicio
+      de sesión en la vista de 64 bits del Registro.
 
-   COM class registration location:
+   Ubicación de registro de la clase COM:
 
    HKLM\SOFTWARE\Classes\CLSID\{8B0C5DF7-3F70-4B90-9B70-61A63A3B5F25}
 
-   PLAP provider registration location:
+   Ubicación de registro del proveedor PLAP:
 
    HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\PLAP Providers\{8B0C5DF7-3F70-4B90-9B70-61A63A3B5F25}
 
 
-PreAuth PLAP                 Informational                      [Page 1]
+PreAuth PLAP                Informativo                     [Página 1]
 </pre>
 
 <pre>
-PreAuth PLAP                   User Guide              November 22, 2026
+PreAuth PLAP                Guía de uso      22 de noviembre de 2026
 
 
-<a name="startup-settings"></a>4.  STARTUP SETTINGS
+<a name="startup-settings"></a>4.  CONFIGURACIÓN DE ACTIVACIÓN
 
-   The provider is registered for the Windows pre-logon access
-   interface and appears as PreAuth PLAP.
+   El proveedor se registra para la interfaz de acceso previo al inicio
+   de sesión de Windows y aparece como PreAuth PLAP.
 
-   Access is available through the network sign-in option on the local
-   sign-in screen. The entry point and its availability depend on the
-   Windows build, configuration, and computer&#x27;s policies.
-
-
-<a name="usage"></a>5.  USAGE
-
-   o  Go to the sign-in screen by signing out or restarting the
-      computer.
-
-   o  Open the network sign-in option and select PreAuth PLAP.
-
-   o  Press Connect to display the Open dialog. Windows may display
-      the button as an arrow and localize its text.
-
-   o  Browse and select a file, or click Cancel to close the dialog.
-
-   o  Use the Windows Back/Cancel controls to return to normal sign-in
-      when needed.
-
-   The file picker opens Windows\System32 and hides pinned locations
-   in the navigation pane. Selecting a file closes the dialog and
-   completes the PLAP interaction.
-
-   Windows manages the provider&#x27;s lifecycle and supplies the owner
-   window for the dialog.
+   Se accede mediante la opción de inicio de sesión de red de la
+   pantalla local de inicio de sesión. El punto de entrada y su
+   disponibilidad dependen de la compilación de Windows, de la
+   configuración y de las directivas del equipo.
 
 
-<a name="uninstallation"></a>6.  UNINSTALLATION
+<a name="usage"></a>5.  USO
 
-   From 64-bit PowerShell as administrator, in the project root:
+   o  Cierra la sesión o reinicia el equipo para ir a la pantalla de
+      inicio de sesión.
+
+   o  Abre la opción de inicio de sesión de red y selecciona
+      PreAuth PLAP.
+
+   o  Pulsa Connect (conectar) para mostrar el cuadro de diálogo Abrir.
+      Windows puede representar el botón con una flecha y mostrar su
+      texto en el idioma del sistema.
+
+   o  Explora las carpetas y selecciona un archivo, o pulsa Cancelar
+      para cerrar el cuadro de diálogo.
+
+   o  Utiliza los controles de Windows para volver atrás o cancelar
+      cuando necesites regresar al inicio de sesión habitual.
+
+   El selector de archivos se abre en Windows\System32 y oculta las
+   ubicaciones ancladas del panel de navegación. Al seleccionar un
+   archivo, se cierra el cuadro de diálogo y finaliza la interacción
+   con PLAP.
+
+   Windows gestiona el ciclo de vida del proveedor y proporciona la
+   ventana propietaria del cuadro de diálogo.
+
+
+<a name="uninstallation"></a>6.  DESINSTALACIÓN
+
+   Desde PowerShell de 64 bits con privilegios de administrador, en la
+   raíz del proyecto PLAP:
 
       .\Uninstall.ps1
 
-   The script removes the provider&#x27;s PLAP and COM registration
-   entries in HKLM and deletes PreAuthPLAP.dll from System32.
+   El script elimina las entradas de registro PLAP y COM del proveedor
+   en HKLM y borra PreAuthPLAP.dll de System32.
 
 
-PreAuth PLAP                 Informational                      [Page 2]
+PreAuth PLAP                Informativo                     [Página 2]
 </pre>

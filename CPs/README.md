@@ -1,104 +1,106 @@
 <p align="center">
   <img
     src="../assets/cp-signin.png"
-    alt="CP — Credential Provider: concept art of the Windows pre-authentication screen with the native Open File dialog"
+    alt="CP — Credential Provider: ilustración conceptual de la pantalla de Windows previa a la autenticación con el cuadro de diálogo nativo Abrir"
     width="100%"
   />
 </p>
 <pre>
-Pre-Auth Project                                           November 2026
-Category: Informational
+Proyecto Pre-Auth                                    Noviembre de 2026
+Categoría: Informativo
 
 
-                 Pre-Auth: Windows Credential Provider
+             Pre-Auth: proveedor de credenciales de Windows
 
-ABSTRACT
+RESUMEN
 
-   This memo describes the function, features, requirements,
-   installation, and use of the Pre-Auth Windows Credential Provider.
+   Este documento describe el funcionamiento, las características, los
+   requisitos, la instalación y el uso del proveedor de credenciales
+   Pre-Auth para Windows.
 
-                           TABLE OF CONTENTS
+                                 ÍNDICE
 
-   <a href="#overview">1.  OVERVIEW</a> ...................................................... <a href="#overview">1</a>
-   <a href="#features">2.  FEATURES</a> ...................................................... <a href="#features">1</a>
-   <a href="#usage">3.  USAGE</a> ......................................................... <a href="#usage">1</a>
-   <a href="#requirements">    3.1.  Requirements</a> ............................................ <a href="#requirements">1</a>
-   <a href="#building">    3.2.  Building</a> ................................................ <a href="#building">1</a>
-   <a href="#installation">    3.3.  Installation</a> ............................................ <a href="#installation">2</a>
-   <a href="#interaction">    3.4.  Interaction</a> ............................................. <a href="#interaction">2</a>
-   <a href="#updating">    3.5.  Updating</a> ................................................ <a href="#updating">2</a>
-   <a href="#uninstallation">    3.6.  Uninstallation</a> .......................................... <a href="#uninstallation">3</a>
-   <a href="#preview">    3.7.  Previewing Operations</a> ................................... <a href="#preview">3</a>
-   <a href="#references">4.  REFERENCES</a> .................................................... <a href="#references">3</a>
+   <a href="#overview">1.  DESCRIPCIÓN GENERAL</a> ............................................ <a href="#overview">1</a>
+   <a href="#features">2.  CARACTERÍSTICAS</a> ................................................ <a href="#features">1</a>
+   <a href="#usage">3.  USO</a> ........................................................... <a href="#usage">1</a>
+   <a href="#requirements">    3.1.  Requisitos</a> ............................................... <a href="#requirements">1</a>
+   <a href="#building">    3.2.  Compilación</a> .............................................. <a href="#building">1</a>
+   <a href="#installation">    3.3.  Instalación</a> .............................................. <a href="#installation">2</a>
+   <a href="#interaction">    3.4.  Interacción</a> .............................................. <a href="#interaction">2</a>
+   <a href="#updating">    3.5.  Actualización</a> ............................................ <a href="#updating">2</a>
+   <a href="#uninstallation">    3.6.  Desinstalación</a> ........................................... <a href="#uninstallation">3</a>
+   <a href="#preview">    3.7.  Vista previa de las operaciones</a> ........................... <a href="#preview">3</a>
+   <a href="#references">4.  REFERENCIAS</a> ................................................... <a href="#references">3</a>
 
 
-Pre-Auth Project           Informational                      [Page i]
+Proyecto Pre-Auth            Informativo                    [Página i]
 </pre>
 
 <pre>
-Pre-Auth               Windows Credential Provider         November 2026
+Pre-Auth           Proveedor de credenciales de Windows     Nov. 2026
 
 
-<a name="overview"></a>1.  OVERVIEW
+<a name="overview"></a>1.  DESCRIPCIÓN GENERAL
 
-   Pre-Auth is a Windows Credential Provider that adds a custom visual
-   option to the Sign-in options selector for each available user.
-   Selecting it displays the Pre-Auth command link in LogonUI. Clicking
-   the link validates the field identifier and retrieves the LogonUI
-   owner window.
+   Pre-Auth es un proveedor de credenciales de Windows que añade una
+   opción visual personalizada al selector de opciones de inicio de
+   sesión de cada usuario disponible. Al seleccionarla, aparece el
+   enlace de comando Pre-Auth en LogonUI. Al pulsar el enlace, se valida
+   el identificador del campo y se obtiene la ventana propietaria de
+   LogonUI.
 
-<a name="features"></a>2.  FEATURES
+<a name="features"></a>2.  CARACTERÍSTICAS
 
-   o  Integration with the Windows sign-in method selector.
+   o  Integración con el selector de métodos de inicio de sesión de
+      Windows.
 
-   o  Association with users enumerated by Windows.
+   o  Asociación con los usuarios enumerados por Windows.
 
-   o  Support for sign-in and workstation unlock scenarios.
+   o  Compatibilidad con el inicio de sesión y el desbloqueo del equipo.
 
-   o  An icon with a transparent background, embedded in the DLL.
+   o  Icono con fondo transparente, incrustado en la DLL.
 
-<a name="usage"></a>3.  USAGE
+<a name="usage"></a>3.  USO
 
-<a name="requirements"></a>3.1.  Requirements
+<a name="requirements"></a>3.1.  Requisitos
 
-   To install and use the provider:
+   Para instalar y utilizar el proveedor:
 
    o  Windows x64.
 
-   o  A 64-bit PowerShell session running as administrator for
-      installation and removal.
+   o  Una sesión de PowerShell de 64 bits con privilegios de
+      administrador para la instalación y la desinstalación.
 
-   To build from Linux:
+   Para compilar desde Linux:
 
    o  GNU Make.
 
-   o  MinGW-w64: x86_64-w64-mingw32-g++ and
+   o  MinGW-w64: x86_64-w64-mingw32-g++ y
       x86_64-w64-mingw32-windres.
 
-<a name="building"></a>3.2.  Building
+<a name="building"></a>3.2.  Compilación
 
-   C++ source files, headers, and the resource definition are in src/.
-   Icons are in resources/. The Makefile and installation scripts are in
-   the project root.
+   Los archivos fuente de C++, las cabeceras y la definición de recursos
+   están en src/. Los iconos están en resources/. El Makefile y los
+   scripts de instalación están en la raíz del proyecto.
 
-   From the project directory, run:
+   Desde el directorio del proyecto, ejecuta:
 
        make
 
-   The output is build/Provider.dll, including its embedded graphics
-   resources.
+   Se genera build/Provider.dll, con los recursos gráficos incrustados.
 
 
-Pre-Auth Project           Informational                      [Page 1]
+Proyecto Pre-Auth            Informativo                    [Página 1]
 </pre>
 
 <pre>
-Pre-Auth               Windows Credential Provider         November 2026
+Pre-Auth           Proveedor de credenciales de Windows     Nov. 2026
 
 
-<a name="installation"></a>3.3.  Installation
+<a name="installation"></a>3.3.  Instalación
 
-   Copy the scripts and DLL to Windows using this directory structure:
+   Copia los scripts y la DLL a Windows con esta estructura:
 
        Pre-Auth/
        |-- Install.ps1
@@ -106,62 +108,64 @@ Pre-Auth               Windows Credential Provider         November 2026
        `-- build/
            `-- Provider.dll
 
-   From that directory, open 64-bit PowerShell as administrator and run:
+   Desde ese directorio, abre PowerShell de 64 bits con privilegios de
+   administrador y ejecuta:
 
        .\Install.ps1
 
-   The installer copies the DLL to %SystemRoot%\System32\Provider.dll
-   and registers the component as Pre-Auth. Sign out or restart Windows
-   to load it.
+   El instalador copia la DLL a %SystemRoot%\System32\Provider.dll
+   y registra el componente como Pre-Auth. Cierra la sesión o reinicia
+   Windows para que se cargue.
 
-<a name="interaction"></a>3.4.  Interaction
+<a name="interaction"></a>3.4.  Interacción
 
-   1.  Select a user on the sign-in screen.
-   2.  Open Sign-in options.
-   3.  Select the skull icon, labeled Pre-Auth.
-   4.  The Pre-Auth command link appears.
+   1.  Selecciona un usuario en la pantalla de inicio de sesión.
+   2.  Abre las opciones de inicio de sesión (Sign-in options).
+   3.  Selecciona el icono de la calavera, identificado como Pre-Auth.
+   4.  Aparecerá el enlace de comando Pre-Auth.
 
-   The click handler is CMinimoCredential::CommandLinkClicked in
-   src/Provider.cpp. It uses OnCreatingWindow to retrieve the owner
-   window.
+   El método que atiende el clic es CMinimoCredential::CommandLinkClicked,
+   en src/Provider.cpp. Utiliza OnCreatingWindow para obtener la ventana
+   propietaria.
 
-<a name="updating"></a>3.5.  Updating
+<a name="updating"></a>3.5.  Actualización
 
-   Uninstall the installed version, restart Windows if the DLL is in
-   use, and run Install.ps1 with the new build at build/Provider.dll.
+   Desinstala la versión actual, reinicia Windows si la DLL está en uso
+   y ejecuta Install.ps1 con la nueva compilación en build/Provider.dll.
 
 
-Pre-Auth Project           Informational                      [Page 2]
+Proyecto Pre-Auth            Informativo                    [Página 2]
 </pre>
 
 <pre>
-Pre-Auth               Windows Credential Provider         November 2026
+Pre-Auth           Proveedor de credenciales de Windows     Nov. 2026
 
 
-<a name="uninstallation"></a>3.6.  Uninstallation
+<a name="uninstallation"></a>3.6.  Desinstalación
 
-   From a 64-bit PowerShell session running as administrator:
+   Desde una sesión de PowerShell de 64 bits con privilegios de
+   administrador:
 
        .\Uninstall.ps1
 
-   The script removes the provider registration from LogonUI, deletes
-   System32\Provider.dll, and removes the component's COM registration.
-   If the DLL is still in use, restart Windows and run the uninstaller
-   again.
+   El script elimina el registro del proveedor en LogonUI, borra
+   System32\Provider.dll y elimina el registro COM del componente.
+   Si la DLL sigue en uso, reinicia Windows y vuelve a ejecutar el
+   desinstalador.
 
-<a name="preview"></a>3.7.  Previewing Operations
+<a name="preview"></a>3.7.  Vista previa de las operaciones
 
-   Both scripts support -WhatIf:
+   Ambos scripts admiten -WhatIf:
 
        .\Install.ps1 -WhatIf
        .\Uninstall.ps1 -WhatIf
 
-<a name="references"></a>4.  REFERENCES
+<a name="references"></a>4.  REFERENCIAS
 
    [1] Microsoft,
-       <a href="https://learn.microsoft.com/en-us/windows/win32/api/credentialprovider/nn-credentialprovider-icredentialprovidercredential2">ICredentialProviderCredential2 interface</a>.
-       User association, provider icons, and labels.
+       <a href="https://learn.microsoft.com/en-us/windows/win32/api/credentialprovider/nn-credentialprovider-icredentialprovidercredential2">Interfaz ICredentialProviderCredential2</a>.
+       Asociación de usuarios, iconos y etiquetas del proveedor.
 
 
-Pre-Auth Project           Informational                      [Page 3]
+Proyecto Pre-Auth            Informativo                    [Página 3]
 </pre>
